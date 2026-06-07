@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Los 50 de Pilar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background: linear-gradient(180deg,#000,#1a1a1a,#000);
+    color:silver;
+    font-family:'Orbitron',sans-serif;
+    overflow-x:hidden;
+    text-align:center;
+}
+
+/* Bolas disco */
+
+.disco{
+    position:fixed;
+    border-radius:50%;
+    background:
+    radial-gradient(circle at 30% 30%,#fff,#c0c0c0,#444);
+    box-shadow:0 0 40px silver;
+    animation:girar 15s linear infinite;
+    z-index:-1;
+}
+
+.disco1{
+    width:120px;
+    height:120px;
+    top:10%;
+    left:5%;
+}
+
+.disco2{
+    width:180px;
+    height:180px;
+    top:20%;
+    right:5%;
+}
+
+.disco3{
+    width:140px;
+    height:140px;
+    bottom:10%;
+    left:15%;
+}
+
+.disco4{
+    width:200px;
+    height:200px;
+    bottom:5%;
+    right:10%;
+}
+
+@keyframes girar{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+header{
+    padding:50px 20px;
+}
+
+h1{
+    font-family:'Monoton',cursive;
+    font-size:4rem;
+    color:#d9d9d9;
+    text-shadow:
+    0 0 10px #fff,
+    0 0 20px silver,
+    0 0 40px silver;
+}
+
+.subtitulo{
+    margin-top:20px;
+    font-size:1.3rem;
+    letter-spacing:3px;
+}
+
+.foto{
+    margin:40px auto;
+    width:350px;
+    max-width:90%;
+    border:6px solid silver;
+    border-radius:20px;
+    box-shadow:0 0 30px silver;
+}
+
+.cuenta{
+    margin:40px auto;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.caja{
+    background:#111;
+    border:2px solid silver;
+    padding:20px;
+    width:120px;
+    border-radius:15px;
+    box-shadow:0 0 15px silver;
+}
+
+.numero{
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.texto{
+    font-size:0.8rem;
+}
+
+.seccion{
+    margin:50px auto;
+    width:90%;
+    max-width:900px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid silver;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,255,255,.2);
+}
+
+h2{
+    margin-bottom:20px;
+    color:#e0e0e0;
+}
+
+.parpadeo{
+    animation:brillo 2s infinite;
+}
+
+@keyframes brillo{
+    50%{
+        text-shadow:0 0 20px white;
+    }
+}
+
+footer{
+    padding:40px;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="disco disco1"></div>
+<div class="disco disco2"></div>
+<div class="disco disco3"></div>
+<div class="disco disco4"></div>
+
+<header>
+
+<h1>¡PILAR CUMPLE 50!</h1>
+
+<p class="subtitulo">
+Una noche inolvidable al estilo de los años 80
+</p>
+
+</header>
+
+<img src="foto-pilar.jpg" alt="Pilar" class="foto">
+
+<div class="cuenta">
+
+<div class="caja">
+<div class="numero" id="dias">0</div>
+<div class="texto">DÍAS</div>
+</div>
+
+<div class="caja">
+<div class="numero" id="horas">0</div>
+<div class="texto">HORAS</div>
+</div>
+
+<div class="caja">
+<div class="numero" id="minutos">0</div>
+<div class="texto">MINUTOS</div>
+</div>
+
+<div class="caja">
+<div class="numero" id="segundos">0</div>
+<div class="texto">SEGUNDOS</div>
+</div>
+
+</div>
+
+<div class="seccion">
+
+<h2>✨ Estás Invitado ✨</h2>
+
+<p>
+A celebrar los maravillosos 50 años de nuestra querida
+<strong>Pilar</strong>.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>👗 Código de Vestuario</h2>
+
+<p class="parpadeo">
+¡Trae tu mejor traje de los años 80!
+</p>
+
+<p>
+Lentejuelas, chaquetas brillantes, peinados extravagantes,
+hombreras, colores metálicos y toda la actitud retro.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>📍 Lugar</h2>
+
+<p>
+Salón Comunal Altos de la Esperanza SM2<br>
+Calle 12 # 31-40
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>📞 Confirma tu asistencia</h2>
+
+<p>
+320 430 5173<br>
+320 426 7245
+</p>
+
+</div>
+
+<footer>
+
+🎶 Prepárate para bailar y disfrutar una noche llena de recuerdos,
+música y mucha diversión 🎶
+
+</footer>
+
+<script>
+
+const fechaEvento =
+new Date("August 15, 2026 17:00:00").getTime();
+
+setInterval(()=>{
+
+const ahora = new Date().getTime();
+const diferencia = fechaEvento - ahora;
+
+const dias = Math.floor(diferencia/(1000*60*60*24));
+const horas = Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((diferencia%(1000*60*60))/(1000*60));
+const segundos = Math.floor((diferencia%(1000*60))/1000);
+
+document.getElementById("dias").innerHTML=dias;
+document.getElementById("horas").innerHTML=horas;
+document.getElementById("minutos").innerHTML=minutos;
+document.getElementById("segundos").innerHTML=segundos;
+
+},1000);
+
+</script>
+
+</body>
+</html>
